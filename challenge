@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="chalg.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="txt">
+    <input type="text">
+    <button onclick="ADD()">ADD</button> </div>
+    <ul id="list"></ul>
+    <Script src ="chalg.js"></Script>
+</body>
+</html>
+
+
+
+javascript:
+
+var input = document.querySelector("input");
+function ADD() {
+    var txt = document.createTextNode(input.value);
+var button=document.querySelector("button")
+var remove=document.createElement("button")
+remove.innerHTML="remove"
+    var li =document.createElement('li')//create element li
+    li.appendChild(txt);//appenchild txt to li
+    li.appendChild(remove)
+    remove.addEventListener("click",function(){
+        li.remove();
+    })
+    var ul =document.getElementById("list")
+    if (input.value ==""){
+    alert("please add a txt")}
+    else{
+    ul.appendChild(li);}//appenchild li to ul
+}
